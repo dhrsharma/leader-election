@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package leadership;
+
+service LeaderElection {
+    rpc Status (StatusRequest) returns (StatusReply) {}
+}
+
+message StatusRequest {
+    string caller = 1;
+}
+
+message StatusReply {
+    string message = 1;
+    string uniqueId = 2;
+}
